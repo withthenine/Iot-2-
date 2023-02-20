@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+   <head>
+      <title> Sensor data </title>
+	  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+   </head>
+   <body>
+
+
+	<script type="text/javascript">
+		var timer = function() {
+			setTimeout(function(){ window.location.reload(); }, 1500);
+		};
+		timer();
+		</script>
+	
+
+	<h1> Sensor Data </h1>
+	<h3> BUtton   ==  {{ buttonhtml  }} </h3>
+	{% if motionhtml == 1 %}<h1>Hello, this equals 1</h1>  <meta http-equiv="refresh" content="0; url=http://127.0.0.1:5000/forside" />  {% endif %}
+	{% if motionhtml and buttonhtml  == 1 %}<h1>Hello, this equals 1</h1>  <meta http-equiv="refresh" content="0; url=http://127.0.0.1:5000/db" />  {% endif %}
+
+
+
+	<h3> MOTION ==  {{ motionhtml  }} </h3>
+	<hr>
+	<h3> Last Sensors Reading: {{ time }} ==> <a href="/"class="button">REFRESH</a></h3>	
+	<hr>
+	<p> 
+   </body>
+</html>
+
